@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Those Pokémon!</title>
+    <link rel="stylesheet" href="card.css">
+</head>
+
+<body>
+    <header>
+        <h1>Pokémon Matching Game</h1>
+        <div id="game-info">
+            <span>Clicks: <span id="click-count">0</span></span>
+            <span>Pairs Left: <span id="pairs-left">0</span></span>
+            <span>Pairs Matched: <span id="pairs-matched">0</span></span>
+            <span>Total Pairs: <span id="total-pairs">0</span></span>
+        </div>
+        <div id="theme-selector">
+            <label for="theme-toggle" style="margin-right: 0.5rem;">Theme:</label>
+            <select id="theme-toggle">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+        </div>
+    </header>
+
+    <div id="controls-container">
+        <div id="controls">
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <button id="start-btn">Start Game</button>
+        </div>
+    </div>
+
+
+    <div id="timer-container">
+        <div id="timer-container-items">
+            <div id="timer">Time Left:</div>
+            <button id="power-btn">Your Power</button>
+            <div id="message-game-end"></div>           
+        </div>
+    </div>
+    <div id="card-holder">
+        <h1>Game Board</h1>
+    </div>
+    <div id="game-grid" class="easy"></div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --card-color: #f0f0f0;
+}
+
+@font-face {
+  font-family: 'Pokemon';
+  src: url('fonts/pokemon_hollow.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body.dark-theme {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --card-color: #2a2a2a;
+}
+
+body {
+  margin: 0px;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+header {
+  background-color: slategrey;
+  display: grid;
+  height: 60px;
+  grid-template-columns: 50% 35% 15%;
+  grid-template-rows: auto;
+  align-items: center;
+}
+
+header>h1 {
+  margin-left: 5%;
+  margin-top: auto;
+  justify-self: start;
+  line-height: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Pokemon', sans-serif;
+}
+
+#game-info {
+  grid-column: 2;
+  display: flex;
+  gap: 2.0rem;
+  margin-top: 0.5rem;
+  justify-self: end;
+}
+
+#theme-selector {
+  grid-column: 3;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5%;
+  margin-top: 0.5rem;
+}
+
+#controls-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#controls {
+    background-color: slategrey;
+    padding: 10px;
+    border-radius: 0px 0px 0px 24px;
+}
+
+#timer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 1rem auto;
+}
+
+#timer-container-items {
+  background-color: slategrey;
+      padding: 14px;
+  border-radius: 18px;
+}
+
+
+#card-holder {
+  width: 680px;
+  height: 456px;
+  justify-content: center;
+  background-color: slategrey;
+  border: 8px solid slategrey;
+  align-content: center;
+  border-radius: 18px;
+  margin: 40px auto;
+  padding: 2px;
+  display: none;
+}
+
+#game-grid {
+  margin: 40px auto;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 8px;
+  padding: 2px;
+  background-color: slategrey;
+  border: 8px solid slategrey;
+  border-radius: 18px;
+  perspective: 1000px;
+}
+
+.card {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+#game-grid.easy {
+  width: calc(1.00 * 680px);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#game-grid.medium {
+  width: calc(1.00 * 680px);
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#game-grid.hard {
+  width: calc(1.35 * 680px);
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.front_face,
+.back_face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 14px;
+  background-color: transparent;
+  backface-visibility: hidden;
+}
+
+.front_face {
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back_face {
+  transform: rotateY(0deg);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card img.grayscale {
+    filter: grayscale(100%);
+}
+
+.flip {
+  transform: rotateY(180deg);
+}
